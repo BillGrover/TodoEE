@@ -1,15 +1,15 @@
-package com.example.AnotherTodo;
+package com.example.AnotherTodo.controllers;
 
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "HelloServlet", value = "/hello-servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "MainController", value = "/main")
+public class MainController extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello motherfuckers!";
+        message = "Hello!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

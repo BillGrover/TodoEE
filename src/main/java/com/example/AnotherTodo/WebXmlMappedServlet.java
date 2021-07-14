@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Serv extends HttpServlet {
+//Маппинг этого сервлета определен в web.xml
+
+public class WebXmlMappedServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         System.out.println("console");
@@ -14,7 +16,7 @@ public class Serv extends HttpServlet {
         // Hello
         PrintWriter out = resp.getWriter();
         out.println("<html><body>");
-        out.println("<h1>" + "message" + "</h1>");
+        out.println("<h1>" + "Маппинг этого сервлета определен в web.xml" + "</h1>");
         out.println("</body></html>");
     }
 }

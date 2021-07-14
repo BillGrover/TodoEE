@@ -2,12 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Todo List EE</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Welcome to Todo List EE" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+<!--кнопка перехода на homepage-->
+<form method="GET" action="home">
+    <input type="submit" value="Go home"/>
+</form><br/>
+
 </body>
 </html>

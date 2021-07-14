@@ -4,13 +4,32 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+<!--    Маппинг сервлета-->
     <servlet>
         <servlet-name>Serv</servlet-name>
-        <servlet-class>com.example.AnotherTodo.Serv</servlet-class>
+        <servlet-class>com.example.AnotherTodo.WebXmlMappedServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Serv</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
 
+<!--    Маппинг JSP-->
+    <servlet>
+        <servlet-name>HomeJSP</servlet-name>
+        <jsp-file>/home.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeJSP</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateTask</servlet-name>
+        <jsp-file>/createTask.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateTask</servlet-name>
+        <url-pattern>/createTask</url-pattern>
+    </servlet-mapping>
 </web-app>
