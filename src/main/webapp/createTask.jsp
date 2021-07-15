@@ -9,17 +9,25 @@
 <form method="POST" action="" id="newTaskForm">
     <div>
         <label>
-            Date (YYYY-MM-DD):
+            Task name:
             <br/>
-            <input type="text" name="taskDate"/>
+            <input required type="text" name="taskTitle"/>
         </label>
     </div>
     <br/>
     <div>
         <label>
-            Task name:
+            Date:
             <br/>
-            <input type="text" name="taskTitle"/>
+            <input required type="date" name="taskDate"/>
+        </label>
+    </div>
+    <br/>
+    <div>
+        <label>
+            Time:
+            <br/>
+            <input required type="time" name="taskTime"/>
         </label>
     </div>
     <br/>
@@ -48,12 +56,14 @@
 
         const title = form.querySelector('[name="taskTitle"]');
         const date = form.querySelector('[name="taskDate"]');
+        const time = form.querySelector('[name="taskTime"]');
         const description = form.querySelector('[name="taskDescription"]');
 
         //ВАРИАНТ: json
         let jsonData = JSON.stringify({
             title: title.value,
             date: date.value,
+            time: time.value,
             description: description.value})
 
         //***********************************************

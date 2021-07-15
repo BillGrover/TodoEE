@@ -9,9 +9,6 @@
 </h1>
 <br/>
 
-<!--ссылка перехода на homepage-->
-<a href="home">Go home</a>
-
 <!--кнопка перехода на homepage-->
 <form method="GET" action="home">
     <input type="submit" value="Go home"/>
