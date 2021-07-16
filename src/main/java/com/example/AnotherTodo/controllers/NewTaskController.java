@@ -1,6 +1,6 @@
 package com.example.AnotherTodo.controllers;
 
-import com.example.AnotherTodo.dbServices.TaskDbService;
+import com.example.AnotherTodo.daos.TaskDAO;
 import com.example.AnotherTodo.model.Task;
 import com.example.AnotherTodo.services.JsonService;
 import org.json.JSONException;
@@ -15,9 +15,9 @@ import java.text.ParseException;
 
 @WebServlet(name = "NewTaskController", value = "/newTask")
 public class NewTaskController extends HttpServlet {
-    private TaskDbService taskDbService;
+    private TaskDAO taskDAO;
     public void init() {
-        taskDbService = new TaskDbService();
+        taskDAO = new TaskDAO();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -31,7 +31,7 @@ public class NewTaskController extends HttpServlet {
         try{
             jsonRequest = JsonService.getJsonFromServletRequest(request);
             task = new Task(jsonRequest);
-            taskDbService.insertToDb(task);
+            taskDAO.insertToDb(task);
             response.setStatus(200);
         }catch (IOException e){
             //TODO: logging IO Exception

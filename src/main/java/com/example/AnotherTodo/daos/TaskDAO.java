@@ -1,4 +1,4 @@
-package com.example.AnotherTodo.dbServices;
+package com.example.AnotherTodo.daos;
 
 import com.example.AnotherTodo.model.Task;
 import com.example.AnotherTodo.services.JdbcService;
@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class TaskDbService {
+public class TaskDAO {
 
     private static final String INSERT_TASK_SQL = "INSERT INTO tasks (title, datetime, description) VALUES (?, ?, ?);";
 

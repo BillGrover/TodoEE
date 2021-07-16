@@ -6,9 +6,8 @@
 <body>
 
 <!--кнопка перехода на homepage-->
-<form method="GET" action="home">
-    <input type="submit" value="Go home"/>
-</form><br/>
+<button onclick="window.location.href = 'http://localhost:8080/'">Back to Main Menu</button>
+<br/>
 
 <!--кнопка СОЗДАТЬ ЗАДАЧУ-->
 <form method="GET" action="createTask">

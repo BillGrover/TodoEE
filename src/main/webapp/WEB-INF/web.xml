@@ -16,12 +16,12 @@
 
 <!--    Маппинг JSP-->
     <servlet>
-        <servlet-name>HomeJSP</servlet-name>
-        <jsp-file>/home.jsp</jsp-file>
+        <servlet-name>TodoHomeJSP</servlet-name>
+        <jsp-file>/todoHome.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HomeJSP</servlet-name>
-        <url-pattern>/home</url-pattern>
+        <servlet-name>TodoHomeJSP</servlet-name>
+        <url-pattern>/todo</url-pattern>
     </servlet-mapping>
 
     <servlet>

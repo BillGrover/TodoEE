@@ -17,8 +17,10 @@ public class Task {
 
     public Task(JSONObject jObj) throws ParseException {
         this.title = jObj.getString("title");
-        this.dateTime = DateTimeParser.parseString(
-                jObj.getString("date") + " " + jObj.getString("time"));
+        this.dateTime =
+                DateTimeParser.parseString(
+                        jObj.getString("date"),
+                        jObj.getString("time"));
         this.description = jObj.getString("description");
     }
 
