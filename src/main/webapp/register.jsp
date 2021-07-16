@@ -81,9 +81,13 @@
 </form>
 <br/>
 <!--кнопка перехода на страницу логина-->
-<form method="GET" action="login">
+<form method="GET" action="auth/login">
     <input type="submit" value="Log-In"/>
 </form>
+<br/>
+<!--кнопка перехода на Main Menu-->
+<button onclick="window.location.href = 'http://localhost:8080/'">Back to Main Menu</button>
+<br/>
 
 <%--СКРИПТ--%>
 <script>
@@ -93,24 +97,25 @@
     function sendData(event) {
         event.preventDefault(); //если этого нет, браузер попытается выполнить action из формы.
 
-        const firstname = form.querySelector('[name="firstname"]');
-        const surname = form.querySelector('[name="surname"]');
-        const username = form.querySelector('[name="username"]');
-        const birthday = form.querySelector('[name="birthday"]');
-        const phone = form.querySelector('[name="phone"]');
-        const telegram = form.querySelector('[name="telegram"]');
-        const email = form.querySelector('[name="email"]');
-        const password = form.querySelector('[name="password"]');
+        const username  = form.querySelector('[name="username"]').value;
+        const password  = form.querySelector('[name="password"]').value;
+        const firstname = form.querySelector('[name="firstname"]').value;
+        const surname   = form.querySelector('[name="surname"]').value;
+        const birthday  = form.querySelector('[name="birthday"]').value;
+        const phone     = form.querySelector('[name="phone"]').value;
+        const telegram  = form.querySelector('[name="telegram"]').value;
+        const email     = form.querySelector('[name="email"]').value;
+
 
         let jsonData = JSON.stringify({
-                username: username.value,
-                firstname: firstname.value,
-                surname: surname.value,
-                birthday: birthday.value,
-                phone: phone.value,
-                telegram: telegram.value,
-                email: email.value,
-                password: password.value
+                username:   username,
+                password:   password,
+                firstname:  firstname   == null ? null : firstname,
+                surname:    surname     == null ? null : surname,
+                birthday:   birthday    == null ? null : birthday,
+                phone:      phone       == null ? null : phone,
+                telegram:   telegram    == null ? null : telegram,
+                email:      email       == null ? null : email
             }
         )
 

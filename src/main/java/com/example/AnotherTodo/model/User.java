@@ -17,6 +17,7 @@ public class User {
     private String telegram;
     private Timestamp birthday;
     private Timestamp registrationDate;
+    private Role role;
 
     public User() {
     }
@@ -24,13 +25,14 @@ public class User {
     public User(JSONObject jObj) throws ParseException {
         this.username = jObj.getString("username");
         this.password = jObj.getString("password");
-        this.firstname = jObj.getString("firstname");
+        this.firstname = jObj.getString("firstname").equals("") ? null : jObj.getString("firstname");
         this.surname = jObj.getString("surname");
         this.email = jObj.getString("email");
         this.phone = jObj.getString("phone");
         this.telegram = jObj.getString("telegram");
         this.birthday = DateTimeParser.parseString(jObj.getString("birthday"));
         this.registrationDate = new Timestamp(System.currentTimeMillis());
+        this.role = Role.USER;
     }
 
     public long getId() {
@@ -71,6 +73,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }
 

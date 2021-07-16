@@ -25,4 +25,20 @@ public class TaskDAO {
             JdbcService.printSQLException(exception);
         }
     }
+
+    public void createTableIfAbsent(){
+        try{
+            Connection connection = JdbcService.getConnection();
+            PreparedStatement ps = connection.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS tasks " +
+                            "(id SERIAL NOT NULL PRIMARY KEY," +
+                            "title varchar(255) NOT NULL," +
+                            "datetime timestamp NOT NULL," +
+                            "description varchar(3000)");
+            ps.executeUpdate();
+            ps.close();
+        }catch (SQLException exception) {
+            JdbcService.printSQLException(exception);
+        }
+    }
 }

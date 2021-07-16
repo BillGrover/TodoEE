@@ -54,17 +54,18 @@
     function sendData(event) {
         event.preventDefault(); //если этого нет, браузер попытается выполнить action из формы.
 
-        const title = form.querySelector('[name="taskTitle"]');
-        const date = form.querySelector('[name="taskDate"]');
-        const time = form.querySelector('[name="taskTime"]');
-        const description = form.querySelector('[name="taskDescription"]');
+        const title = form.querySelector('[name="taskTitle"]').value;
+        const date = form.querySelector('[name="taskDate"]').value;
+        const time = form.querySelector('[name="taskTime"]').value;
+        const description = form.querySelector('[name="taskDescription"]').value;
 
         //ВАРИАНТ: json
         let jsonData = JSON.stringify({
-            title: title.value,
-            date: date.value,
-            time: time.value,
-            description: description.value})
+            title: title,
+            date: date,
+            time: time,
+            description: description == null ? null : description
+        })
 
         //***********************************************
         //ВАРИАНТ: multipart/form-data

@@ -19,12 +19,12 @@
 </form>
 <br/>
 <!--кнопка перехода на страницу логина-->
-<form method="GET" action="login">
+<form method="GET" action="auth/login">
     <input type="submit" value="Log-In"/>
 </form>
 <br/>
 <!--кнопка перехода на страницу логаута-->
-<form method="GET" action="logout">
+<form method="GET" action="auth/logout">
     <input type="submit" value="Log-Out"/>
 </form>
 <br/>

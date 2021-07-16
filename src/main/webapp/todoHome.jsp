@@ -4,8 +4,7 @@
     <title>Todo Home</title>
 </head>
 <body>
-
-<!--кнопка перехода на homepage-->
+<!--кнопка перехода на Main Menu-->
 <button onclick="window.location.href = 'http://localhost:8080/'">Back to Main Menu</button>
 <br/>
 
